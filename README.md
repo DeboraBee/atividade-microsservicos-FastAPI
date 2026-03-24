@@ -47,6 +47,7 @@ Acesse no navegador ou estoque API:
 http://localhost:8001/estoque/1
 ```
 Saída esperada no Navegador: 
+
 <img width="376" height="133" alt="image" src="https://github.com/user-attachments/assets/e137adf0-3ad3-4e0d-930c-ba59670972e0" />
 
 
@@ -56,6 +57,19 @@ Acesse no navegador ou produtos API:
 http://localhost:8000/produtos/1
 ```
 Saída esperada no Navegador: 
+
 <img width="669" height="133" alt="image" src="https://github.com/user-attachments/assets/78a38e50-0e41-4744-9e0c-2e1a40587384" />
+
+Erros esperados: 
+
+Delay: 
+
+<img width="728" height="139" alt="image" src="https://github.com/user-attachments/assets/b54b0508-6e6c-49ae-b0f6-d8061815866c" />
+
+Serviço Offline:
+
+<img width="906" height="617" alt="image" src="https://github.com/user-attachments/assets/8214ed5e-ffbc-48a9-8a8d-034d0cd8d86c" />
+
+
 
 ```
