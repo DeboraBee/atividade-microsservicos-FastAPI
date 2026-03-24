@@ -60,7 +60,7 @@ Saída esperada no Navegador:
 
 <img width="669" height="133" alt="image" src="https://github.com/user-attachments/assets/78a38e50-0e41-4744-9e0c-2e1a40587384" />
 
-Erros esperados: 
+**Erros esperados:** 
 
 Delay: 
 
@@ -70,6 +70,9 @@ Serviço Offline:
 
 <img width="906" height="617" alt="image" src="https://github.com/user-attachments/assets/8214ed5e-ffbc-48a9-8a8d-034d0cd8d86c" />
 
+**Neste tipo de implementação, quais problemas podem ocorrer?** 
+
+Nesse sistema que eu montei, o maior problema acaba sendo o acoplamento síncrono, que cria uma dependência bem direta entre os serviços. Como o meu serviço de produtos precisa esperar o estoque responder para completar a requisição, qualquer instabilidade no estoque acaba travando o fluxo inteiro. Se o estoque ficar lento, a minha vitrine de produtos também fica lenta, o que aumenta a latência para quem está acessando. Além disso, tem o risco do efeito cascata: se o estoque cair de vez, o serviço de produtos até continua de pé, mas vai entregar uma informação incompleta ou dar erro se eu não tratar a falha direito. Outro ponto complicado é que a rede vira um ponto único de falha; se rolar um soluço na comunicação entre os containers, a experiência do usuário é prejudicada mesmo com o código funcionando. Por isso que eu tive que colocar aquele timeout e o tratamento de exceção, para garantir que o sistema tenha um mínimo de resiliência e não quebre totalmente quando um pedaço dele para de responder.
 
 
 ```
