@@ -58,15 +58,4 @@ http://localhost:8000/produtos/1
 Saída esperada no Navegador: 
 <img width="669" height="133" alt="image" src="https://github.com/user-attachments/assets/78a38e50-0e41-4744-9e0c-2e1a40587384" />
 
-
-Prints com os resultados: 
-```
-No terminal de comando: 
-<img width="709" height="43" alt="image" src="https://github.com/user-attachments/assets/0e58dd00-3949-40d5-aa99-4742da0dd0ab" />
-
-No Docker:
-<img width="889" height="428" alt="image" src="https://github.com/user-attachments/assets/66b1f8ca-2835-4c14-aa3a-7d8c5193f21a" />
-
-
-
 ```
