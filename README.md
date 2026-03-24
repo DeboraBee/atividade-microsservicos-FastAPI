@@ -1,0 +1,67 @@
+# IFSP-PTB - PTBDAMS: APIs REST - Tutorial
+
+Autora: Débora Laranjeira
+
+Esta tutorial exemplifica a implementação de dois microsserviços demonstrando a comunicação direta (síncrona) entre eles. É parte da aula da disciplina "Desenvolvimento de APIs e Microsserviços" do curso TADS - Campus Pirituba.
+
+
+**💻 Cenário proposto:**
+
+Microsserviço 1 – Produtos
+* Endpoint: /produtos/{id}
+* Consulta dados de disponibilidade no estoque
+
+Microsserviço 2 – Estoque
+* Endpoint: /estoque/{id}
+* Retorna dados de inventário mockados
+
+---
+
+**✔ Tecnologias sugeridas:**
+* FastAPI (Python)
+* REST API
+* Docker e Docker Compose
+
+---
+
+#### Subindo os containers
+
+```
+docker-compose up --build
+```
+
+**O que acontece aqui?**
+
+* O Docker vai buildar as imagens dos dois serviços
+* Criar containers separados
+* Criar uma rede interna
+* Permitir comunicação entre serviços pelo nome (estoque)
+
+---
+
+#### Testando os serviços
+
+**Serviço de estoque**
+Acesse no navegador ou cliente API:
+```
+http://localhost:8001/clientes/1
+```
+
+**Serviço de produtos**
+Acesse no navegador ou cliente API:
+```
+http://localhost:8000/pedidos/1
+```
+
+Resultado esperado:
+```
+{
+  "id": 1,
+  "nome": "Produto 1",
+  "info_estoque": {
+    "id": 1,
+    "item": "Teclado Mecânico",
+    "quantidade": 15
+  }
+}
+```

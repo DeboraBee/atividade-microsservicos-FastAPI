@@ -1,0 +1,25 @@
+services:
+
+  estoque: 
+    build: ./servico-estoque 
+    container_name: ms-estoque
+    ports:
+      - "8001:8001"
+    networks:
+      - ms-network
+
+  produtos: 
+    build: ./servico-produtos 
+    container_name: ms-produtos
+    ports:
+      - "8000:8000"
+    depends_on:
+      - estoque
+    environment:
+      - ESTOQUE_URL=http://estoque:8001 
+    networks:
+      - ms-network
+
+networks:
+  ms-network:
+    driver: bridge
