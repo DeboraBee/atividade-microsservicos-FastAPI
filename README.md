@@ -42,15 +42,15 @@ docker-compose up --build
 #### Testando os serviços
 
 **Serviço de estoque**
-Acesse no navegador ou cliente API:
+Acesse no navegador ou estoque API:
 ```
-http://localhost:8001/clientes/1
+http://localhost:8001/estoque/1
 ```
 
 **Serviço de produtos**
-Acesse no navegador ou cliente API:
+Acesse no navegador ou produtos API:
 ```
-http://localhost:8000/pedidos/1
+http://localhost:8000/produtos/1
 ```
 
 Resultado esperado:
